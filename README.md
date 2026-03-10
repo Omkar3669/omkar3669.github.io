@@ -3,65 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMW Cars & Bikes</title>
+
+<title>BMW Luxury Cars & Bikes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-background:#111;
+padding:0;
+box-sizing:border-box;
+font-family: 'Montserrat', sans-serif;
+}
+
+body{
+background:#0a0a0a;
 color:white;
 }
 
 header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
 background:black;
-padding:20px;
-text-align:center;
-font-size:30px;
+position:fixed;
+width:100%;
+z-index:1000;
 }
 
-nav{
-text-align:center;
-padding:10px;
-background:#1c1c1c;
+.logo{
+font-size:24px;
+font-weight:600;
+letter-spacing:2px;
 }
 
 nav a{
 color:white;
-margin:15px;
+margin-left:30px;
 text-decoration:none;
-font-size:18px;
+font-weight:300;
 }
 
 .hero{
-height:500px;
-background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') center/cover;
+height:100vh;
+background:url("https://images.unsplash.com/photo-1617531653332-bd46c24f2068") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:50px;
-font-weight:bold;
-}
-
-section{
-padding:50px;
 text-align:center;
 }
 
-.cards{
-display:flex;
-justify-content:center;
+.hero h1{
+font-size:60px;
+background:rgba(0,0,0,0.5);
+padding:20px 40px;
+}
+
+.section{
+padding:100px 60px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:50px;
+font-size:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-flex-wrap:wrap;
 }
 
 .card{
-background:#222;
-width:300px;
+background:#111;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 0 10px black;
+transition:0.4s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
 .card img{
@@ -71,162 +96,52 @@ object-fit:cover;
 }
 
 .card h3{
-padding:15px;
+padding:20px;
 }
 
 footer{
 background:black;
-padding:20px;
 text-align:center;
+padding:30px;
 margin-top:40px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-BMW Cars & Bikes
-</header>
+
+<div class="logo">BMW</div>
 
 <nav>
 <a href="#">Home</a>
-<a href="#">Cars</a>
-<a href="#">Bikes</a>
-<a href="#">Contact</a>
+<a href="#cars">Cars</a>
+<a href="#bikes">Bikes</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<div class="hero">
-Ultimate Driving Machine
-</div>
-
-<section>
-<h2>BMW Cars</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e">
-<h3>BMW M4</h3>
-</div>
-
-<div class="card">
-<img src="<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMW Cars & Bikes</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#111;
-color:white;
-}
-
-header{
-background:black;
-padding:20px;
-text-align:center;
-font-size:30px;
-}
-
-nav{
-text-align:center;
-padding:10px;
-background:#1c1c1c;
-}
-
-nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-size:18px;
-}
-
-.hero{
-height:500px;
-background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:50px;
-font-weight:bold;
-}
-
-section{
-padding:50px;
-text-align:center;
-}
-
-.cards{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.card{
-background:#222;
-width:300px;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 0 10px black;
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.card h3{
-padding:15px;
-}
-
-footer{
-background:black;
-padding:20px;
-text-align:center;
-margin-top:40px;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-BMW Cars & Bikes
 </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Cars</a>
-<a href="#">Bikes</a>
-<a href="#">Contact</a>
-</nav>
-
 <div class="hero">
-Ultimate Driving Machine
+<h1>Sheer Driving Pleasure</h1>
 </div>
 
-<section>
+<section class="section" id="cars">
+
 <h2>BMW Cars</h2>
 
-<div class="cards">
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>BMW M4 Competition</h3>
+</div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e">
-<h3>BMW M4</h3>
-</div>
-
-<div class="card">
-<img src="https://images.overdrive.in/wp-content/uploads/2015/02/092_BMW_i8.jpg">
 <h3>BMW i8</h3>
 </div>
 
@@ -236,12 +151,14 @@ Ultimate Driving Machine
 </div>
 
 </div>
+
 </section>
 
-<section>
-<h2>BMW Bikes</h2>
+<section class="section" id="bikes">
 
-<div class="cards">
+<h2>BMW Motorcycles</h2>
+
+<div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6">
@@ -259,50 +176,14 @@ Ultimate Driving Machine
 </div>
 
 </div>
+
 </section>
 
-<footer>
-© 2026 BMW Showcase Website
-</footer>
+<footer id="contact">
 
-</body>
-</html>>
-<h3>BMW i8</h3>
-</div>
+<p>Luxury BMW Showcase Website</p>
+<p>© 2026 BMW Inspired Design</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
-<h3>BMW X5</h3>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2>BMW Bikes</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6">
-<h3>BMW S1000RR</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65">
-<h3>BMW R1250GS</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1615172282427-9a57ef2d142e">
-<h3>BMW G310R</h3>
-</div>
-
-</div>
-</section>
-
-<footer>
-© 2026 BMW Showcase Website
 </footer>
 
 </body>
