@@ -3,208 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW | Luxury Cars & Motorcycles</title>
+    <title>BMW.com | The International BMW Website</title>
+    <link rel="icon" href="https://www.bmw.com/etc.clientlibs/settings/wcm/designs/bmwcom/base/frontend/resources/img/favicon.ico">
     <style>
-        /* BMW Official Color Palette */
         :root {
-            --white: #ffffff;
-            --light-grey: #f2f2f2;
-            --medium-grey: #666666;
-            --dark-grey: #262626;
             --bmw-blue: #0066b1;
             --bmw-m-light: #009ada;
             --bmw-m-dark: #003057;
             --bmw-m-red: #e7222e;
+            --text-main: #262626;
+            --text-secondary: #666;
+            --bg-light: #f6f6f6;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: "BMWTypeNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background-color: var(--white);
-            color: var(--dark-grey);
-            -webkit-font-smoothing: antialiased;
+            color: var(--text-main);
+            background-color: #fff;
+            line-height: 1.5;
         }
 
-        /* Top Bar & Nav */
+        /* --- NAVIGATION --- */
         nav {
-            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 5%;
-            background: white;
+            padding: 15px 5%;
+            background: #fff;
             border-bottom: 1px solid #e5e5e5;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-container { display: flex; align-items: center; }
-        .logo-img { height: 50px; width: 50px; margin-right: 15px; }
+        .nav-left { display: flex; align-items: center; gap: 40px; }
+        
+        .logo-box img {
+            width: 50px;
+            height: 50px;
+        }
 
+        .nav-links { display: flex; gap: 25px; }
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-grey);
-            font-weight: 500;
+            color: var(--text-main);
             font-size: 14px;
-            margin-left: 30px;
+            font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Hero Banner */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            height: 85vh;
-            background: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070') center/cover no-repeat;
+            height: 90vh;
+            background: url('https://next-media.bmw.com/p/m/v1/public/contents/editorial/bmw-m/2024/m5-sedan/teaser/bmw-m5-sedan-teaser-sp-xxl.jpg') center/cover no-repeat;
             display: flex;
-            align-items: flex-end;
-            padding: 80px 5%;
+            align-items: center;
+            color: #fff;
         }
 
-        .hero-content {
-            color: white;
-            max-width: 600px;
+        .hero-overlay {
+            padding-left: 8%;
+            max-width: 700px;
         }
 
-        .hero-content h1 { font-size: 3rem; font-weight: 300; margin-bottom: 20px; }
+        .hero-overlay h2 { font-size: 1.2rem; font-weight: 300; letter-spacing: 4px; margin-bottom: 10px; }
+        .hero-overlay h1 { font-size: 4.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 30px; }
 
-        .btn-white {
-            background: white;
-            color: black;
-            padding: 12px 35px;
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--bmw-blue);
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
+            font-size: 14px;
             transition: 0.3s;
         }
+        .btn-primary:hover { background: #004a80; }
 
-        /* M-Performance Stripes Divider */
-        .m-stripes {
-            height: 5px;
-            display: flex;
-            width: 100%;
+        /* --- M STRIPES --- */
+        .m-stripes { height: 6px; display: flex; }
+        .s1 { flex: 1; background: var(--bmw-m-light); }
+        .s2 { flex: 1; background: var(--bmw-m-dark); }
+        .s3 { flex: 1; background: var(--bmw-m-red); }
+
+        /* --- CONTENT SECTIONS --- */
+        .container { padding: 80px 8%; }
+        
+        .label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
         }
-        .s1 { width: 33.3%; background: var(--bmw-m-light); }
-        .s2 { width: 33.3%; background: var(--bmw-m-dark); }
-        .s3 { width: 33.3%; background: var(--bmw-m-red); }
 
-        /* Model Grid */
-        .section-container { padding: 80px 5%; }
-        .section-header { margin-bottom: 40px; }
-        .section-header h2 { font-size: 2rem; font-weight: 300; }
+        h2.section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
 
-        .model-grid {
+        /* --- THE GRID --- */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2px; /* BMW uses tight spacing */
+            background: #e5e5e5; /* Border color for the grid */
+            border: 1px solid #e5e5e5;
         }
 
-        .model-card {
-            background: var(--light-grey);
-            padding: 40px;
-            transition: 0.4s;
-            cursor: pointer;
+        .card {
+            background: #fff;
+            padding: 0;
+            overflow: hidden;
             position: relative;
         }
 
-        .model-card:hover { background: #e9e9e9; }
-        .model-card img { width: 100%; height: auto; transition: 0.4s; }
-        .model-card:hover img { transform: scale(1.05); }
+        .card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
 
-        .model-info h3 { font-size: 1.5rem; margin-top: 20px; }
-        .model-info p { color: var(--medium-grey); margin-bottom: 20px; }
+        .card:hover img { transform: scale(1.05); }
 
-        /* Footer */
+        .card-info {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .card-info h3 { font-size: 1.8rem; font-weight: 300; }
+
+        /* --- FOOTER --- */
         footer {
-            background: var(--dark-grey);
-            color: #ccc;
-            padding: 60px 5%;
-            text-align: center;
-            font-size: 13px;
+            background: #111;
+            color: #fff;
+            padding: 80px 8% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 { margin-bottom: 20px; font-size: 14px; text-transform: uppercase; color: #888; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; font-size: 14px; cursor: pointer; }
+
+        @media (max-width: 768px) {
+            .hero-overlay h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-container">
-            <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
-            <span style="font-weight:bold; letter-spacing: 2px;">Sheer Driving Pleasure</span>
+        <div class="nav-left">
+            <div class="logo-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
+            </div>
+            <div class="nav-links">
+                <a href="#">Models</a>
+                <a href="#">Electric</a>
+                <a href="#">Circular World</a>
+                <a href="#">Motorrad</a>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="#models">Models</a>
-            <a href="#motorrad">Motorrad</a>
-            <a href="#">Electric</a>
+        <div class="nav-right">
+            <span style="font-size: 20px; cursor: pointer;">🔍</span>
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h1>THE ALL-NEW BMW M5</h1>
-            <p style="margin-bottom: 25px;">Engineered for adrenaline. Crafted for luxury.</p>
-            <a href="#" class="btn-white">DISCOVER MORE</a>
+    <section class="hero">
+        <div class="hero-overlay">
+            <h2>M HYBRID.</h2>
+            <h1>THE ALL-NEW <br> BMW M5.</h1>
+            <a href="#" class="btn-primary">DISCOVER NOW</a>
         </div>
-    </div>
+    </section>
 
     <div class="m-stripes">
         <div class="s1"></div><div class="s2"></div><div class="s3"></div>
     </div>
 
-    <div class="section-container" id="models">
-        <div class="section-header">
-            <p>CHOOSE YOUR ENGINE</p>
-            <h2>BMW MODELS</h2>
-        </div>
+    <div class="container">
+        <span class="label">Sheer Driving Pleasure</span>
+        <h2 class="section-title">Explore the lineup</h2>
 
-        <div class="model-grid">
-            <div class="model-card">
-                <div class="model-info">
-                    <p>M Performance</p>
-                    <h3>The M4 Coupe</h3>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?q=80&w=2069" alt="BMW M8">
+                <div class="card-info">
+                    <p>M-Series</p>
+                    <h3>The M8 Competition</h3>
                 </div>
-                <img src="https://images.unsplash.com/photo-1619362224246-70150d1804d8?q=80&w=1000" alt="BMW M4">
             </div>
 
-            <div class="model-card">
-                <div class="model-info">
-                    <p>Luxury Sedan</p>
-                    <h3>The 7 Series</h3>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1556122071-e404be74749f?q=80&w=2070" alt="BMW i7">
+                <div class="card-info">
+                    <p>Electric</p>
+                    <h3>The All-Electric i7</h3>
                 </div>
-                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1000" alt="BMW 7">
             </div>
-        </div>
-    </div>
 
-    <div class="section-container" id="motorrad" style="background: #fafafa;">
-        <div class="section-header">
-            <p>TWO WHEELS. ONE PASSION.</p>
-            <h2>BMW MOTORRAD</h2>
-        </div>
-
-        <div class="model-grid">
-            <div class="model-card" style="background: white;">
-                <div class="model-info">
-                    <p>Sport</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1615172282427-9a57ef2d142e?q=80&w=2070" alt="BMW S1000RR">
+                <div class="card-info">
+                    <p>Motorrad</p>
                     <h3>S 1000 RR</h3>
-                </div>
-                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1000" alt="S1000RR">
-            </div>
-
-            <div class="model-card" style="background: white;">
-                <div class="model-info">
-                    <p>Adventure</p>
-                    <h3>R 1300 GS</h3>
-                </div>
-                <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?q=80&w=1000" alt="R1250GS">
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© BMW AG 2026. Note: This is a fan-made website for portfolio purposes.</p>
-    </footer>
-
-</body>
-</html>
+                
